@@ -11,7 +11,10 @@ namespace ConsoleAppCodesigna
         static void Main(string[] args)
         {
 
-           int[] ab  = {2, 1, 3, 5, 3, 2};
+            //firstDuplicate Given an array a that contains only numbers in the range from 1 to a.length, find the first duplicate number for which the second occurrence has the minimal index. In other words, if there are more than 1 duplicated numbers, return the number for which the second occurrence has a smaller index than the second occurrence of the other number does. If there are no such elements, return -1.
+
+
+            int[] ab  = {2, 1, 3, 5, 3, 2};
 
             int firstDuplicate(int[] a)
             {
@@ -24,12 +27,13 @@ namespace ConsoleAppCodesigna
                 }
                 return -1;
             }
-
-           var result =  firstDuplicate(ab);
-
+            var result =  firstDuplicate(ab);
 
 
-           int firstDuplicate1(int[] a)
+          
+
+
+            int firstDuplicate1(int[] a)
            {
                for (int i = 0; i < a.Length; i++)
                {
@@ -40,8 +44,55 @@ namespace ConsoleAppCodesigna
                }
                return -1;
            }
+            result = 0;
+            result = firstDuplicate1(ab);
 
-           var result1 = firstDuplicate1(ab);
+            //Practice
+
+            int firstDuplicate3(int[] a)
+            {
+                HashSet<int> se = new HashSet<int>();
+                foreach (var VARIABLE in a)
+                {
+                    if (se.Contains(VARIABLE))
+                        return VARIABLE;
+                    se.Add(VARIABLE);
+                }
+
+                return -1;
+            }
+            result = 0;
+            result = firstDuplicate3(ab);
+
+
+            //firstNotRepeatingCharacter Given an array a that contains only numbers in the range from 1 to a.length, find the first duplicate number for which the second occurrence has the minimal index. In other words, if there are more than 1 duplicated numbers, return the number for which the second occurrence has a smaller index than the second occurrence of the other number does. If there are no such elements, return -1.
+
+
+            string ss = "abacabad";
+
+            char firstNotRepeatingCharacter(string s)
+            {
+                var exist = s.GroupBy(x => x).Where(x => x.Count() == 1).FirstOrDefault();
+                return exist != null ? exist.Key : '_';
+            }
+            
+           var result1 = firstNotRepeatingCharacter(ss);
+
+
+
+            char firstNotRepeatingCharacter1(string s)
+            {
+                foreach (char c in s)
+                {
+                    if (s.IndexOf(c) == s.LastIndexOf(c))
+                        return c;
+                }
+                return '_';
+            }
+
+            result1 = ' ';
+            result1 = firstNotRepeatingCharacter1(ss);
+
 
         }
     }
