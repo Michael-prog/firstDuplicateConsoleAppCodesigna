@@ -23,6 +23,7 @@ namespace ConsoleAppCodesigna
                 {
                     if (se.Contains(t))
                         return t;
+
                     se.Add(t);
                 }
                 return -1;
@@ -46,7 +47,7 @@ namespace ConsoleAppCodesigna
 
             //Practice  ==================================================================================================================================================================
 
-            int firstDuplicate3(int[] a)
+            int firstDuplicate2(int[] a)
             {
                 HashSet<int> se = new HashSet<int>();
                 foreach (var VARIABLE in a)
@@ -59,7 +60,58 @@ namespace ConsoleAppCodesigna
                 return -1;
             }
             result = 0;
+            result = firstDuplicate2(ab);
+
+            //Practice 20210320  ==================================================================================================================================================================
+
+            int firstDuplicate3(int[] a)
+            {
+                HashSet<int> hs = new HashSet<int>();
+
+                foreach (var VARIABLE in a)
+                {
+                    if (hs.Contains(VARIABLE))
+                        return VARIABLE;
+                    hs.Add(VARIABLE);
+
+                }
+                return -1;
+            }
+            result = 0;
             result = firstDuplicate3(ab);
+
+
+            int firstDuplicate7(int[] a)
+            {
+                HashSet<int> hs = new HashSet<int>();
+                foreach (var VARIABLE in a)
+                {
+                    if (hs.Contains(VARIABLE))
+                        return VARIABLE;
+                    hs.Add(VARIABLE);
+                }
+                return - 1;
+            }
+            result = 0;
+            result = firstDuplicate7(ab);
+
+
+            int firstDuplicate8(int[] a)
+            {
+                HashSet<int> hs  = new HashSet<int>();
+                foreach (var VARIABLE in hs)
+                { 
+                    if (hs.Contains(VARIABLE)) return VARIABLE;
+                    hs.Add(VARIABLE);
+                }
+                return -1;
+            }
+            result = 0;
+            result = firstDuplicate8(ab);
+
+
+
+
 
 
 
