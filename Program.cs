@@ -111,6 +111,21 @@ namespace ConsoleAppCodesigna
 
 
 
+            //Practice 20210321  ==================================================================================================================================================================
+
+
+            int firstDuplicate9(int[] a)
+            {
+                HashSet<int> hs = new HashSet<int>();
+                foreach (int v in hs)
+                {
+                    if (hs.Contains(v)) return v;
+                    hs.Add(v);
+                }
+                return -1;
+            }
+            result = 0;
+            result = firstDuplicate9(ab);
 
 
 
