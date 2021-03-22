@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,14 +48,18 @@ namespace ConsoleAppCodesigna
 
             //Practice  ==================================================================================================================================================================
 
+
+   
+            ab = new int[] { 2, 1, 3, 5, 3, 2 };
+
+
             int firstDuplicate2(int[] a)
             {
                 HashSet<int> se = new HashSet<int>();
-                foreach (var VARIABLE in a)
+                foreach (var t in a)
                 {
-                    if (se.Contains(VARIABLE))
-                        return VARIABLE;
-                    se.Add(VARIABLE);
+                    if (se.Contains(t)) return t;
+                    se.Add(t);
                 }
 
                 return -1;
@@ -66,13 +71,11 @@ namespace ConsoleAppCodesigna
 
             int firstDuplicate3(int[] a)
             {
-                HashSet<int> hs = new HashSet<int>();
-
-                foreach (var VARIABLE in a)
+                HashSet<int> se = new HashSet<int>();
+                foreach (var t in a)
                 {
-                    if (hs.Contains(VARIABLE))
-                        return VARIABLE;
-                    hs.Add(VARIABLE);
+                    if (se.Contains(t)) return t;
+                    se.Add(t);
 
                 }
                 return -1;
@@ -86,8 +89,7 @@ namespace ConsoleAppCodesigna
                 HashSet<int> hs = new HashSet<int>();
                 foreach (var VARIABLE in a)
                 {
-                    if (hs.Contains(VARIABLE))
-                        return VARIABLE;
+                    if (hs.Contains(VARIABLE)) return VARIABLE;
                     hs.Add(VARIABLE);
                 }
                 return - 1;
@@ -99,7 +101,7 @@ namespace ConsoleAppCodesigna
             int firstDuplicate8(int[] a)
             {
                 HashSet<int> hs  = new HashSet<int>();
-                foreach (var VARIABLE in hs)
+                foreach (var VARIABLE in a)
                 { 
                     if (hs.Contains(VARIABLE)) return VARIABLE;
                     hs.Add(VARIABLE);
@@ -117,7 +119,7 @@ namespace ConsoleAppCodesigna
             int firstDuplicate9(int[] a)
             {
                 HashSet<int> hs = new HashSet<int>();
-                foreach (int v in hs)
+                foreach (int v in a)
                 {
                     if (hs.Contains(v)) return v;
                     hs.Add(v);
@@ -126,6 +128,58 @@ namespace ConsoleAppCodesigna
             }
             result = 0;
             result = firstDuplicate9(ab);
+
+
+
+            //Practice 20210322  ==================================================================================================================================================================
+
+
+            int firstDuplicate10(int[] a)
+            {
+                HashSet<int> hs = new HashSet<int>();
+                foreach (int i in a)
+                {
+                    if (hs.Contains(i)) return i;
+                    hs.Add(i);
+                }
+
+                return - 1;
+            }
+            result = 0;
+            result = firstDuplicate10(ab);
+
+            int firstDuplicate11(int[] a)
+            {
+                HashSet<int> hs = new HashSet<int>();
+                foreach (var v in a)
+                {
+                    if (hs.Contains(v)) return v;
+                    hs.Add(v);
+                } 
+
+                return -1;
+            }
+            result = 0;
+            result = firstDuplicate11(ab);
+
+
+            int firstDuplicate12(int []a)
+            {
+                HashSet<int> hs = new HashSet<int>();
+                foreach (var V in a)
+                {
+                    if (hs.Contains(V))
+                        return V;
+                    hs.Add(V);
+                }
+                return -1;
+            }
+            result = 0;
+            result = firstDuplicate12(ab);
+
+
+
+
 
 
 
